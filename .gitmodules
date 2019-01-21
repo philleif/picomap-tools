@@ -1,0 +1,3 @@
+[submodule "MegaDepth"]
+	path = MegaDepth
+	url = https://github.com/lixx2938/MegaDepth
