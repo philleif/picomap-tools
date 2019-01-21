@@ -59,3 +59,8 @@ typings/
 
 # next.js build output
 .next
+
+# temp files and assets
+tmp/
+media/
+.DS_Store
