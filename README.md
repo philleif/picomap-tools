@@ -1,5 +1,5 @@
 # picomap-tools
-Toolkit for making tiny projection maps.
+Toolkit for making tiny 3d-printed projection maps.
 
 Requirements:
 - Python
@@ -14,25 +14,30 @@ Optional:
 $ git submodule init
 $ git submodule update
 
-# Find loop point & extract video
+# Command Line Reference
+
+*Find loop point & extract video*
+
 `python bin/process-video.py "media/fish.mp4"`
 
-# Video to B&W
+*Video to B&W*
+
 `ffmpeg -i media/test.mp4 -vf hue=s=0 -c:a copy media/bw.mp4`
 
-# Video to images
+*Video to images*
+
 `ffmpeg -i media/bw.mp4 -vf fps=5 -vsync 0 media/out%d.png`
 
-# Blend images
+*Blend images*
+
 `convert media/out*.png -evaluate-sequence mean media/averageresult.png`
 
-# Make depth map
-https://github.com/lixx2938/MegaDepth
+*Make depth map*
 
-# Convert to STL
-https://github.com/philleif/img2stl
+https://github.com/lixx2938/MegaDepth (installed as submodule)
 
-# Clean STL
+*Clean STL*
+
 1. Open Meshlab
 2. Import the .stl file (File>Import Mesh ...)
 3. Select all points ( Filers>Selection>Select all )
@@ -46,6 +51,5 @@ Or use the included Meshlab script (simplify-stl.mlx):
 # References
 "An Algorithm to Extract Looping GIFs From Videos": http://zulko.github.io/blog/2015/02/01/extracting-perfectly-looping-gifs-from-videos-with-python-and-moviepy/
 
-"Creating a smooth surface from huge number of vertices"
-https://blender.stackexchange.com/questions/48735/creating-a-smooth-surface-from-huge-number-of-vertices
+"Creating a smooth surface from huge number of vertices": https://blender.stackexchange.com/questions/48735/creating-a-smooth-surface-from-huge-number-of-vertices
 
